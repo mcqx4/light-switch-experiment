@@ -43,8 +43,11 @@ After a genuine or a swapped answer has been shown, every condition gets the sam
 The outcome is "Yes" or "No", so the data are analysed with Bayesian multilevel logistic regression (`brms`):
 
 ```r
-yes ~ swapped * condition + model + (1 | item) + (1 | session)    # H1 and H3
-yes ~ own_p + others_p + condition + model + (1 | item) + (1 | session)    # H2
+# H1 and H3
+yes ~ swapped * condition + model + (1 | item) + (1 | session)
+
+# H2
+yes ~ own_p + others_p + condition + model + (1 | item) + (1 | session)
 ```
 
 An odds ratio between 0.5 and 2 is treated as too small to matter. The rules for "supported", "refuted" and "inconclusive" were fixed before data collection:
